@@ -38,7 +38,9 @@
     src: url(./fonts/LubalinGraphStd-Demi.otf);
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -50,13 +52,66 @@ body {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+    cursor: none;
+}
+
+.cursor,
+.cursor-text {
+    position: fixed;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.1s;
+}
+
+.cursor {
+    background: #f3be26;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    z-index: 999;
+}
+
+.cursor-text {
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    z-index: 9999;
+    display: grid;
+    place-content: center;
+    opacity: 0;
+
+    svg {
+        width: 80px;
+    }
+}
+.cursor-follower {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    z-index: 1;
+    transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+        0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+    user-select: none;
+    pointer-events: none;
+    transform: translate(4px, 4px);
+}
+
+#header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    height: 100px;
 }
 
 #nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2vw;
+    padding: 10px 1.7vw;
     overflow: hidden;
     margin-left: 60px;
     margin-right: 60px;
@@ -84,8 +139,7 @@ body {
     color: #f0f5f9;
 }
 
-
-.logo { 
+.logo {
     width: 4vw;
 }
 
@@ -97,7 +151,7 @@ body {
 #nav a {
     position: relative;
     text-decoration: none;
-    color: #b9b9b9;
+    color: #f0f5f9;
     margin-left: 1vw;
     font-size: 1vw;
     font-family: Sloth-SemiBold, sans-serif;
@@ -106,7 +160,7 @@ body {
 #nav a:after {
     content: "";
     position: absolute;
-    background-color: #DB4E18;
+    background-color: #db4e18;
     height: 3px;
     width: 0;
     left: 0;
@@ -115,7 +169,8 @@ body {
 }
 
 #nav a:hover {
-    color:#f0f5f9;
+    color: #f3be26;
+    transition: 0.3s;
 }
 
 #nav a:hover:after {
@@ -135,4 +190,112 @@ body {
 .video-background video {
     height: 100%;
     overflow: hidden;
+}
+
+#main {
+    position: relative;
+}
+
+#page1 {
+    height: 110vh;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.page1-h1 {
+    font-size: 4vw;
+    font-family: LubalinGraphStd-Book, sans-serif;
+    color: #f0f5f9;
+    padding-left: 100px;
+    width: 50vw;
+}
+
+.page1-button {
+    background-color: white;
+    border: none;
+    padding: 15px 30px;
+    color: black;
+    cursor: pointer;
+    width: 200px;
+    margin: 30px 100px;
+    font-family: LubalinGraphStd-Demi, sans-serif;
+    font-size: larger;
+}
+
+#page2 {
+    height: 80vh;
+}
+
+.page2-h1 {
+    font-size: 4vw;
+    color: #f0f5f9;
+    font-family: Sloth-Regular, sans-serif;
+    padding: 0px 100px;
+}
+
+.color-orange {
+    color: #db4e18;
+}
+
+.featured {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 100px;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.featured1 {
+    display: flex;
+    flex-direction: column;
+    width: 33.33vw;
+    gap: 20px;
+}
+
+.featured1 h1 {
+    font-family: Sloth-Regular, sans-serif;
+    color: #f0f5f9;
+}
+
+.featured1 p {
+    font-family: Sloth-Regular, sans-serif;
+    color: #f0f5f9;
+}
+
+.featured2 {
+    display: flex;
+    flex-direction: column;
+    width: 33.33vw;
+    gap: 20px;
+}
+
+.featured2 h1 {
+    font-family: Sloth-Regular, sans-serif;
+    color: #f0f5f9;
+}
+
+.featured2 p {
+    font-family: Sloth-Regular, sans-serif;
+    color: #f0f5f9;
+}
+
+.featured3 {
+    display: flex;
+    flex-direction: column;
+    width: 33.33vw;
+    gap: 20px;
+}
+
+.featured3 h1 {
+    font-family: Sloth-Regular, sans-serif;
+    color: #f0f5f9;
+}
+
+.featured3 p {
+    font-family: Sloth-Regular, sans-serif;
+    color: #f0f5f9;
 }
