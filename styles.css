@@ -1,3 +1,5 @@
+/* fonts install */
+
 @font-face {
     font-family: Sloth-Light;
     src: url(./fonts/Sloth-Light.ttf);
@@ -38,6 +40,8 @@
     src: url(./fonts/LubalinGraphStd-Demi.otf);
 }
 
+/* general styles */
+
 *,
 *:before,
 *:after {
@@ -55,6 +59,8 @@ body {
     cursor: none;
 }
 
+/* cursor styles */
+
 .cursor,
 .cursor-text {
     position: fixed;
@@ -65,7 +71,7 @@ body {
 }
 
 .cursor {
-    background: #f3be26;
+    background: #f0f5f9;
     top: 0;
     width: 20px;
     height: 20px;
@@ -99,6 +105,8 @@ body {
     transform: translate(4px, 4px);
 }
 
+/* header & nav section */
+
 #header {
     position: fixed;
     left: 0;
@@ -117,26 +125,31 @@ body {
     margin-right: 60px;
 }
 
-.search-button {
-    display: inline-flex;
-    align-items: center;
-    border: 2px solid #f0f5f9;
-    padding: 0.3rem 2.5rem;
-    border-radius: 5rem;
-    background-color: transparent;
-    cursor: pointer;
+/* styling of whole input container */
+.container-input {
+    position: relative;
 }
 
-.search-button img {
-    width: 1rem;
-    height: 1rem;
-    margin-right: 0.5rem;
+.input {
+    width: 150px;
+    padding: 10px 0px 10px 40px;
+    border-radius: 9999px;
+    border: solid 1px #333;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+    opacity: 0.8;
 }
 
-.search-button span {
-    font-size: 1rem;
-    font-family: Sloth-Regular, sans-serif;
-    color: #f0f5f9;
+.container-input svg {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+}
+
+.input:focus {
+    opacity: 1;
+    width: 250px;
 }
 
 .logo {
@@ -177,6 +190,8 @@ body {
     width: 100%;
 }
 
+/* background video */
+
 .video-background {
     position: fixed;
     top: 0;
@@ -192,9 +207,13 @@ body {
     overflow: hidden;
 }
 
+/* main */
+
 #main {
     position: relative;
 }
+
+/* page 1 */
 
 #page1 {
     height: 110vh;
@@ -213,26 +232,90 @@ body {
     width: 50vw;
 }
 
-.page1-button {
-    background-color: white;
-    border: none;
-    padding: 15px 30px;
-    color: black;
-    cursor: pointer;
+.box {
     width: 200px;
-    margin: 30px 100px;
+    height: auto;
+    float: left;
+    transition: 0.5s linear;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 15px 30px;
+    text-align: center;
+    margin: -50px 0px;
+    background: #000;
+    font-weight: 900;
+    color: #f0f5f9;
     font-family: LubalinGraphStd-Demi, sans-serif;
     font-size: larger;
 }
 
+.box:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(100%);
+}
+
+.box:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+}
+
+.box:hover {
+    box-shadow: 0 5px 15px #f0f5f982;
+}
+
+.box:hover:before {
+    border-color: #f0f5f9;
+    height: 100%;
+    transform: translateX(0);
+    transition: 0.3s transform linear, 0.3s height linear 0.3s;
+}
+
+.box:hover:after {
+    border-color: #f0f5f9;
+    height: 100%;
+    transform: translateX(0);
+    transition: 0.3s transform linear, 0.3s height linear 0.5s;
+}
+
+button {
+    color: #f0f5f9;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 100px;
+}
+
+/* page 2 */
+
 #page2 {
-    height: 80vh;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .page2-h1 {
     font-size: 4vw;
     color: #f0f5f9;
-    font-family: Sloth-Regular, sans-serif;
+    font-family: LubalinGraphStd-Book, sans-serif;
     padding: 0px 100px;
 }
 
@@ -240,19 +323,88 @@ body {
     color: #db4e18;
 }
 
+section {
+    width: 50vw;
+}
+
 .featured {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 100px;
     flex-direction: row;
+    padding-left: 100px;
+    padding-right: 100px;
     gap: 20px;
+}
+
+#featured-text {
+    color: #f0f5f9;
+    font-family: Sloth-SemiBold, sans-serif;
+    padding: 50px 100px;
+}
+
+.preview1 {
+    position: absolute;
+    width: 30vw;
+    height: 250px;
+    overflow: hidden;
+    pointer-events: none;
+    transform-origin: center;
+    transform: scale(0);
+    z-index: 5;
+}
+
+.preview-image1 {
+    width: 100%;
+    height: 100%;
+    background: url(https://www.pwc.in/assets/images/ui-transition/consulting/risk-consulting/the-digital-personal-data-protection-bill-india-2023.jpeg);
+    background-size: cover;
+    background-position: 0 0;
+    pointer-events: none;
+}
+
+.preview2 {
+    position: absolute;
+    width: 30vw;
+    height: 250px;
+    overflow: hidden;
+    pointer-events: none;
+    transform-origin: center;
+    transform: scale(0);
+    z-index: 5;
+}
+
+.preview-image2 {
+    width: 100%;
+    height: 100%;
+    background: url(https://www.pwc.in/assets/images/ui-transition/home-page/the-new-sustainability-mandate.jpg);
+    background-size: cover;
+    background-position: 0 0;
+    pointer-events: none;
+}
+
+.preview3 {
+    position: absolute;
+    width: 30vw;
+    height: 250px;
+    overflow: hidden;
+    pointer-events: none;
+    transform-origin: center;
+    transform: scale(0);
+    z-index: 5;
+}
+
+.preview-image3 {
+    width: 100%;
+    height: 100%;
+    background: url(https://www.pwc.in/assets/images/ui-transition/home-page/digital-store-homepage.jpg);
+    background-size: cover;
+    background-position: 0 0;
+    pointer-events: none;
 }
 
 .featured1 {
     display: flex;
     flex-direction: column;
-    width: 33.33vw;
+    width: 30vw;
     gap: 20px;
 }
 
@@ -269,7 +421,7 @@ body {
 .featured2 {
     display: flex;
     flex-direction: column;
-    width: 33.33vw;
+    width: 30vw;
     gap: 20px;
 }
 
@@ -286,7 +438,7 @@ body {
 .featured3 {
     display: flex;
     flex-direction: column;
-    width: 33.33vw;
+    width: 30vw;
     gap: 20px;
 }
 
@@ -297,5 +449,63 @@ body {
 
 .featured3 p {
     font-family: Sloth-Regular, sans-serif;
+    color: #f0f5f9;
+}
+
+/* page 3 */
+
+#page3 {
+    height: 90vh;
+    background-color: #000;
+}
+
+#whatsnew-text {
+    color: #f0f5f9;
+    font-family: Sloth-SemiBold, sans-serif;
+    padding: 20px 100px;
+}
+
+#elems {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 100px;
+}
+
+#elem1 {
+    width: 50%;
+    height: 100%;
+}
+
+#elem1 #image-div {
+    height: 60%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#image-div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+}
+
+#image-div:hover img {
+    scale: 1.1;
+}
+
+#elem1 h4 {
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Sloth-Regular, sans-serif;
+    color: #f0f5f9;
+}
+
+#elem1 p {
+    font-size: 14px;
+    font-family: Sloth-Regular, sans-serif;
+    font-weight: 100;
     color: #f0f5f9;
 }
