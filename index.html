@@ -16,25 +16,43 @@
     <body>
         <div id="header">
             <div id="nav">
+                <!-- logo -->
                 <img
                     class="logo"
                     src="./Assests/pwc_logo.png"
                     alt="travello logo"
                 />
+                <!-- nav bar a tags -->
                 <a class="industries nav-text">INDUSTRIES</a>
                 <a class="services nav-text">SERVICES</a>
                 <a class="reserach nav-text">RESEARCH & INSIGHTS HUB</a>
                 <a class="about nav-text">ABOUT US</a>
                 <a class="careers nav-text">CAREERS</a>
-                <button class="search-button">
-                    <img
-                        src="./Assests/search-alt-svgrepo-com (1).svg"
-                        alt="Search Icon"
+                <!-- nav bar search bar -->
+                <div class="container-input">
+                    <input
+                        type="text"
+                        placeholder="Search"
+                        name="text"
+                        class="input"
                     />
-                    <span>Search</span>
-                </button>
+                    <svg
+                        fill="#000000"
+                        width="20px"
+                        height="20px"
+                        viewBox="0 0 1920 1920"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z"
+                            fill-rule="evenodd"
+                        ></path>
+                    </svg>
+                </div>
+                <!-- nav bar search end -->
             </div>
         </div>
+        <!-- background videos -->
         <div class="video-background">
             <video
                 autoplay
@@ -43,7 +61,9 @@
                 src="./Assests/pwc (online-video-cutter.com).mp4"
             ></video>
         </div>
+        <!-- cursor -->
         <div class="cursor"></div>
+        <!-- cursor text svg -->
         <div class="cursor-text">
             <svg
                 width="100"
@@ -69,45 +89,103 @@
             </svg>
         </div>
         <div id="main">
+            <!-- page 1 -->
             <div id="page1">
                 <h1 class="page1-h1">
                     Global Consumer<br />Insights Pulse Survey:<br />India
                     perspective
                 </h1>
-                <button class="page1-button">Read More</button>
+                <!-- page 1 read more button -->
+                <button>
+                    <span class="box"> Read More </span>
+                </button>
             </div>
             <div id="page2">
-                <h1 class="page2-h1">Our purpose is to <span class="color-orange">build trust</span> in society and <span class="color-orange">solve</span> important <span class="color-orange">problems.</span></h1>
-                <div class="featured">
-                    <div class="featured1">
-                        <div class="featured1-big-text">
-                            <h1>PwC Insights: The Digital Personal Data Protection Act India
-                            2023</h1>
-                        </div>
-                        <div class="featured1-small-text">
-                            <p>We help clients gauge what the legislation means for them
-                            and how they can proceed with the changes it may bring in
-                            the business environment.</p>
-                        </div>
+                <!-- page2 big text -->
+                <h1 class="page2-h1">
+                    Our purpose is to
+                    <span class="color-orange">build trust</span> in society and
+                    <span class="color-orange">solve</span> important
+                    <span class="color-orange">problems.</span>
+                </h1>
+                <!-- featured section after first page -->
+                <p id="featured-text">FEATURED</p>
+                <div class="wrapper">
+                    <div class="preview1">
+                        <div class="preview-image1"></div>
                     </div>
-                    <div class="featured2">
-                        <div class="featured2-big-text">
-                            <h1>The new sustainability mandate: strategy + business</h1>
-                        </div>
-                        <div class="featured2-small-text">
-                            <p>Leaders must better communicate why prioritizing
-                            sustainability isn`t a luxury, but a necessity for long-term
-                            competitiveness.</p>
-                        </div>
+                    <div class="preview2">
+                        <div class="preview-image2"></div>
                     </div>
-                    <div class="featured3">
-                        <div class="featured3-big-text">
-                            <h1>Digital Store: Digital Solutions to transform your business</h1>
+                    <div class="preview3">
+                        <div class="preview-image3"></div>
+                    </div>
+                    <div class="featured">
+                        <section class="featured1">
+                            <div class="featured1-big-text">
+                                <h1>
+                                    PwC Insights: The Digital Personal Data
+                                    Protection Act India 2023
+                                </h1>
+                            </div>
+                            <div class="featured1-small-text">
+                                <p>
+                                    We help clients gauge what the legislation
+                                    means for them and how they can proceed with
+                                    the changes it may bring in the business
+                                    environment.
+                                </p>
+                            </div>
+                        </section>
+                        <section class="featured2">
+                            <div class="featured2-big-text">
+                                <h1>
+                                    The new sustainability mandate: strategy +
+                                    business
+                                </h1>
+                            </div>
+                            <div class="featured2-small-text">
+                                <p>
+                                    Leaders must better communicate why
+                                    prioritizing sustainability isn`t a luxury,
+                                    but a necessity for long-term
+                                    competitiveness.
+                                </p>
+                            </div>
+                        </section>
+                        <section class="featured3">
+                            <div class="featured3-big-text">
+                                <h1>
+                                    Digital Store: Digital Solutions to
+                                    transform your business
+                                </h1>
+                            </div>
+                            <div class="featured3-small-text">
+                                <p>
+                                    At PwC Store, we have multiple Digital
+                                    solutions available to help you to scale
+                                    your business efficiently.
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div id="page3">
+                <p id="whatsnew-text">WHAT'S NEW</p>
+                <div id="elems">
+                    <div id="elem1">
+                        <div id="image-div">
+                            <img src="./Assests/manufacturing.jpg" alt="" />
                         </div>
-                        <div class="featured3-small-text">
-                            <p>At PwC Store, we have multiple Digital solutions available
-                            to help you to scale your business efficiently.</p>
-                        </div>
+                        <h4>
+                            Advantage India: What makes the country a
+                            competitive global manufacturing hub
+                        </h4>
+                        <p>
+                            What makes the country a competitive global
+                            manufacturing powerhouse
+                        </p>
                     </div>
                 </div>
             </div>
